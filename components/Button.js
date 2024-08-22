@@ -12,12 +12,14 @@ export default function Button({ label }) {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    width: 320,
-    height: 68,
+    // width: '100%',
+    // height: '50%',
+    flex:1/3,
     marginHorizontal: 20,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 3,
+    margin:3,
   },
   button: {
     borderRadius: 10,

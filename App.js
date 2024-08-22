@@ -28,11 +28,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   imageContainer: {
-    flex: 1,
-    paddingTop: 58,
+    //flex: 1,
+    paddingTop: 3,
+    backgroundColor:"magenta",
+    marginBottom:10,
   },
   footerContainer: {
-    flex: 1 / 3,
+    flex: 1,
     alignItems: 'center',
+    justifyContent:'center',
   },
 });
