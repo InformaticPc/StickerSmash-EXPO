@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, View} from "react-native";
 
-import Button from "./components/Button.js";
-import ImageViewer from './components/ImageViewer.js';
+import Button from './components/Button'; 
+import ImageViewer from './components/ImageViewer';
 
-const PlaceHolderImage = require('./assets/images/background-image.png')
+const PlaceholderImage = require("./assets/images/background-image.png");
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View styles={styles.imageContainer}>
-         <ImageViewer placeHolderImageSource={PlaceHolderImage}/>
+      <View style={styles.imageContainer}>
+        <ImageViewer placeholderImageSource={PlaceholderImage} />
       </View>
-
       <View style={styles.footerContainer}>
-        <Button label ="Choose a photo"/>
-        <Button label= "Use this photo"/>
+        <Button label="Choose a photo" />
+        <Button label="Use this photo" />
       </View>
       <StatusBar style="auto" />
     </View>
@@ -23,18 +22,17 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  footerContainer:{
-    flex: 1 / 3,
-    alignItems: 'center',
-  },
   container: {
     flex: 1,
     backgroundColor: '#25292e',
     alignItems: 'center',
   },
-  imageContainer:{
+  imageContainer: {
     flex: 1,
     paddingTop: 58,
   },
-  //SOMETHNG WRONG DON'T DISPLAY NOTHING
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: 'center',
+  },
 });
