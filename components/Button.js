@@ -32,7 +32,7 @@ export default function Button({ label, theme, onPress }) {
     <View style={styles.buttonContainer}>
       <Pressable // "Use this photo" BUTTON
         style={styles.button}
-        onPress={() => alert("You pressed a button.")}
+        onPress={onPress} // alert message removed and placed onPress Parameter from fuction
       >
         <Text style={styles.buttonLabel}>{label}</Text>
       </Pressable>
