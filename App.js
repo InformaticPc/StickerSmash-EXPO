@@ -6,11 +6,14 @@ import { useState } from "react";
 import Button from "./components/Button";
 import ImageViewer from "./components/ImageViewer";
 
+import  * as CircleButton from "./components/CircleButton";
+import * as IconButton from "./components/IconButton";
+
 const PlaceholderImage = require("./assets/images/background-image.png");
 
 export default function App() {
 
-  const [showAppOption, setShowAppOptions] = useState(false);
+  const [showAppOptions, setShowAppOptions] = useState(false);
 
   const [selectedImage, setSelectedImage] = useState(null); //use this state variable to hold the URI of the selected image.
 
@@ -27,6 +30,18 @@ export default function App() {
     } else {
       alert("You did not select any image.");
     }
+
+    // Icon buttons functions ↓
+    const onReset = () => {
+      setShowAppOptions(false);
+    };
+    const onAddSticker = () => {
+      // to be implemented
+    };
+    const onSaveImageAsync = async () => {
+      // to be implemented
+    };
+
   };
 
   return (
@@ -37,8 +52,14 @@ export default function App() {
           selectedImage={selectedImage}
         />
       </View>
-        {showAppOption ? (
-          <View />) : 
+        {showAppOptions ? (
+           <View style={styles.optionsContainer}>
+            <View style={styles.optionsRow}>
+              <IconButton icon="refresh" label="Reset" onPress={onReset}/>
+              <CircleButton onPress={onAddSticker}/>
+              <IconButton icon="save-alt" label="Save" onPress={onSaveImageAsync}/>
+            </View>
+           </View> ) : 
           (
           <View style={styles.footerContainer}>
             <Button
@@ -64,8 +85,18 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 58,
   },
+  // option buttons (2)
   footerContainer: {
     flex: 1 / 3,
     alignItems: "center",
   },
+  // option icons (3)
+  optionsContainer:{
+    position: 'absolute',
+    bottom: 80
+  },
+  optionsRow: {
+    alignItems: 'center',
+    flexDirection: 'row'
+  }
 });
