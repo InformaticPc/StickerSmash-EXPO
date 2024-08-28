@@ -5,13 +5,13 @@ import * as ImagePicker from 'expo-image-picker';
 
 import Button from './components/Button';
 import ImageViewer from './components/ImageViewer';
-import CircleButton from './components/CircleButton';
+import CircleButton from './components/CircleButton'; // seems that the issue was that I IMPORT '*' INSTEAD OF THE FUNCTION NAME [check fundamentals of imports in react how '*' works..⚠⚠]
 import IconButton from './components/IconButton';
 
 const PlaceholderImage = require('./assets/images/background-image.png');
 
 export default function App() {
-  const [showAppOptions, setShowAppOptions] = useState(false);
+  const [showAppOptions, setShowAppOptions] = useState(false); // 1st param is the current state (true | false) 2nd param is to modify the state
   const [selectedImage, setSelectedImage] = useState(null);
 
   const pickImageAsync = async () => {
